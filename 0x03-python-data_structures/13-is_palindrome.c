@@ -12,6 +12,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *ptr = *head;
 	int len, i = 0, j = 0;
+	int list_array[100];
 
 	if (ptr == NULL)
 	{
@@ -19,7 +20,6 @@ int is_palindrome(listint_t **head)
 	}
 
 	len = len_list(head);
-	int list_array[len];
 
 	for (i = 0; i < len; i++)
 	{
