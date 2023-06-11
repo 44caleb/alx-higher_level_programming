@@ -20,9 +20,7 @@ Directory: 0x03-python-data_structures
 File: 13-is_palindrome.c, lists.h
 
 
-
-
-0. Print a list of integers
+0. Print a list of integer
 mandatory
 Write a function that prints all integers of a list.
 
