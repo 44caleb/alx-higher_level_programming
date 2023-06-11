@@ -1,7 +1,7 @@
 #include "lists.h"
 
 int is_palindrome(listint_t **head);
-int len_list(listint_t **head)
+int len_list(listint_t **head);
 
 /**
 *is_palindrome - checks if a linked list is a palindrome
