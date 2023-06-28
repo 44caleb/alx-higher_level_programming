@@ -9,5 +9,4 @@ class Square:
     Methods:
     - none
     """
-    def __init__(self):
-        pass
+    pass
