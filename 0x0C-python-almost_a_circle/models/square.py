@@ -40,6 +40,7 @@ class Square(Rectangle):
                     setattr(self, key, value)
 
     def to_dictionary(self):
+        """returns object dictionary representation"""
         dict_rep = {}
         keys = ["id", "size", "x", "y"]
         for key in keys:
