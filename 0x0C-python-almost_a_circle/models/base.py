@@ -30,12 +30,12 @@ class Base:
         """writes json representation to a file"""
         filename = "{}.json".format(cls.__name__)
         data = []
-        if list_obj is None:
-            json_data = to_json_string(data)
+        if list_objs is None:
+            json_data = cls.to_json_string(data)
         else:
             for i in list_objs:
                 data.append(i.to_dictionary())
-            json_data = to_json_string(data)
+            json_data = cls.to_json_string(data)
         with open(filename, "w") as f:
             f.write(json_data)
 
@@ -52,3 +52,19 @@ class Base:
         instance = cls(4, 4, 4, 4)
         instance.update(**dictionary)
         return instance
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns list of classes from a file of JSON strings.
+
+        Returns:
+            If the file does not exist - an empty list.
+            Otherwise - a list of instantiated classes.
+        """
+        filename = str(cls.__name__) + ".json"
+        try:
+            with open(filename, "r") as jsonfile:
+                list_dicts = Base.from_json_string(jsonfile.read())
+                return [cls.create(**d) for d in list_dicts]
+        except IOError:
+            return []

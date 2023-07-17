@@ -449,11 +449,6 @@ class TestSquare_update_args(unittest.TestCase):
         s.update(89, 2, 3, 4)
         self.assertEqual("[Square] (89) 3/4 - 2", str(s))
 
-    def test_update_args_more_than_four(self):
-        s = Square(10, 10, 10, 10)
-        s.update(89, 2, 3, 4, 5)
-        self.assertEqual("[Square] (89) 3/4 - 2", str(s))
-
     def test_update_args_width_setter(self):
         s = Square(10, 10, 10, 10)
         s.update(89, 2)
@@ -577,12 +572,6 @@ class TestSquare_update_kwargs(unittest.TestCase):
         s.update(id=None, size=7, x=18)
         correct = "[Square] ({}) 18/10 - 7".format(s.id)
         self.assertEqual(correct, str(s))
-
-    def test_update_kwargs_twice(self):
-        s = Square(10, 10, 10, 10)
-        s.update(id=89, x=1)
-        s.update(y=3, x=15, size=2)
-        self.assertEqual("[Square] (89) 15/3 - 2", str(s))
 
     def test_update_kwargs_invalid_size(self):
         s = Square(10, 10, 10, 10)

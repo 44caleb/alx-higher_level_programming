@@ -7,10 +7,10 @@ from models.base import Base
 class Rectangle(Base):
     """creates a rectangle class"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
@@ -21,7 +21,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, width):
         """width setter"""
-        if not isinstance(width, int):
+        if type(width) != int:
             raise TypeError("width must be an integer")
         if width <= 0:
             raise ValueError("width must be > 0")
@@ -35,7 +35,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, height):
         """height setter"""
-        if not isinstance(height, int):
+        if type(height) != int:
             raise TypeError("height must be an integer")
         if height <= 0:
             raise ValueError("height must be > 0")
@@ -49,7 +49,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, x):
         """x setter"""
-        if not isinstance(x, int):
+        if type(x) != int:
             raise TypeError("x must be an integer")
         if x < 0:
             raise ValueError("x must be >= 0")
@@ -63,7 +63,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, y):
         """y setter"""
-        if not isinstance(y, int):
+        if type(y) != int:
             raise TypeError("y must be an integer")
         if y < 0:
             raise ValueError("y must be >= 0")
@@ -71,20 +71,20 @@ class Rectangle(Base):
 
     def area(self):
         """returns the rectangle area"""
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         """prints the rectangle shape"""
-        print("\n" * self.__y, end="")
-        for i in range(0, self.__height):
-            print(" " * self.__x, end="")
-            print("#" * self.__width)
+        print("\n" * self.y, end="")
+        for i in range(0, self.height):
+            print(" " * self.x, end="")
+            print("#" * self.width)
 
     def __str__(self):
         """string representation of object"""
         return ("[Rectangle] ({}) {}/{} - {}/{}"
-                .format(self.id, self.__x, self.__y,
-                        self.__width, self.__height))
+                .format(self.id, self.x, self.y,
+                        self.width, self.height))
 
     def update(self, *args, **kwargs):
         """update the rectangle attributes"""
