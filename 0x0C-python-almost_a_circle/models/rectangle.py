@@ -7,6 +7,7 @@ from models.base import Base
 class Rectangle(Base):
     """creates a rectangle class"""
     def __init__(self, width, height, x=0, y=0, id=None):
+        """rectangle class constructor"""
         self.width = width
         self.height = height
         self.x = x
@@ -99,6 +100,7 @@ class Rectangle(Base):
                     setattr(self, key, value)
 
     def to_dictionary(self):
+        """returns the object dictionary representation"""
         dict_rep = {}
         keys = ["id", "width", "height", "x", "y"]
         for key in keys:
