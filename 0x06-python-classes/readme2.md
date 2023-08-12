@@ -5,4 +5,6 @@ This repository contains code to create a console for the AirBnB clone. The cons
 
 
 ### Some available commands
-`create`
+1. `create` creates a new instance of a class. ex `create <class>`
+
+2. `update` 
