@@ -7,4 +7,10 @@ This repository contains code to create a console for the AirBnB clone. The cons
 ### Some available commands
 1. `create` creates a new instance of a class. ex `create <class>`
 
-2. `update` 
+2. `update` updates object attributes. ex `update <class> <object_id> <attribute name> <value>`
+
+3. `destroy` destroys an object with given id. ex `<destroy> <class> <object_id>` or `<class>.<destroy>(id)`
+
+4. `show` displays an object with specific class and id. ex `<class>.<show>(id)`
+
+5. `count` displays the number of objects of a given class. ex `<class>.<count>()`
