@@ -1,3 +1,3 @@
 #!/bin/bash
 # sends json data to a url and retireves body of response
-curl -s --json @$2 $1
+curl -s "$1" -d "@$2" -X POST -H "Content-Type: application/json"
