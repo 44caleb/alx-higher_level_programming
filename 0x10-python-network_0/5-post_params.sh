@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 #posts data to a url
 #!/bin/bash
 #takes in a url and sends a POST request and displays response"
